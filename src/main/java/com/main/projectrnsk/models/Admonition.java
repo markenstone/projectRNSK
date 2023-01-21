@@ -42,13 +42,13 @@ public class Admonition {
     private  String typeDescription;
 
     @Column(name = "Date_issue")
-    private Date dateIssue;
+    private String dateIssue;
 
     @Column(name = "Correction_date_plan")
-    private Date correctionDatePlan;
+    private String correctionDatePlan;
 
     @Column(name = "Correction_date_fact")
-    private Date correctionDateFact;
+    private String correctionDateFact;
 
     @Column(name = "Remedy_mark")
     private String remedyMark;
@@ -211,27 +211,27 @@ public class Admonition {
         this.typeDescription = typeDescription;
     }
 
-    public Date getDateIssue() {
+    public String getDateIssue() {
         return dateIssue;
     }
 
-    public void setDateIssue(Date dateIssue) {
+    public void setDateIssue(String dateIssue) {
         this.dateIssue = dateIssue;
     }
 
-    public Date getCorrectionDatePlan() {
+    public String getCorrectionDatePlan() {
         return correctionDatePlan;
     }
 
-    public void setCorrectionDatePlan(Date correctionDatePlan) {
+    public void setCorrectionDatePlan(String correctionDatePlan) {
         this.correctionDatePlan = correctionDatePlan;
     }
 
-    public Date getCorrectionDateFact() {
+    public String getCorrectionDateFact() {
         return correctionDateFact;
     }
 
-    public void setCorrectionDateFact(Date correctionDateFact) {
+    public void setCorrectionDateFact(String correctionDateFact) {
         this.correctionDateFact = correctionDateFact;
     }
 
