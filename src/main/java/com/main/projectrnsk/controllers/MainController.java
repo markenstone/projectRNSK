@@ -23,8 +23,6 @@ public class MainController {
 
     @GetMapping("/")
     public String index(@NotNull Model model) {
-//        List<Users> users = usersService.getAllUsers();
-//        model.addAttribute("users",users);
         List<Admonition> admonitions = admonitionService.getAllAdmonition();
         model.addAttribute("admonitions", admonitions);
         return "index.html";
@@ -36,6 +34,12 @@ public class MainController {
         model.addAttribute("admonitions", admonition);
         return "admonition-update";
     }
+
+    @GetMapping("/add")
+    public String add(){
+        return "admonition-add";
+    }
+
 
     @PostMapping("/update/{id}")
     public String updateAdmonition(@PathVariable(value = "id") long id,
@@ -77,25 +81,34 @@ public class MainController {
         admonition.setCustomerRepresentative(customerRepresentative);
         admonitionService.saveAdmonition(admonition);
         return "redirect:/";
+    }
 
+    @PostMapping("/add")
+    public String addAdmonition(@RequestParam String number,
+                                @RequestParam String customer,
+                                @RequestParam String nameObject,
+                                @RequestParam String codeObject,
+                                @RequestParam String perfomer,
+                                @RequestParam String typeWork,
+                                @RequestParam String description,
+                                @RequestParam String classificationDescription,
+                                @RequestParam String regulatoryDocuments,
+                                @RequestParam String typeDescription,
+                                @RequestParam String dateIssue,
+                                @RequestParam String correctionDatePlan,
+                                @RequestParam String correctionDateFact,
+                                @RequestParam String remedyMarkFinal,
+                                @RequestParam String employee,
+                                @RequestParam String executor,
+                                @RequestParam String customerRepresentative) {
 
+        Admonition admonition = new Admonition(customer, nameObject, Integer.parseInt(codeObject), perfomer, typeWork,
+                description, classificationDescription, regulatoryDocuments, number, typeDescription, dateIssue,
+                correctionDatePlan, remedyMarkFinal, employee, executor, customerRepresentative);
 
+        admonitionService.saveAdmonition(admonition);
+
+        return "redirect:/";
     }
 
 }
-//    @PostMapping("/item/{id}/update")
-//    public String updateItem(
-//            @PathVariable(value = "id") long id,
-//            @RequestParam String title,
-//            @RequestParam String image,
-//            @RequestParam String price,
-//            @RequestParam String info
-//    ) {
-//        Item item = itemRepository.findById(id).orElse(new Item());
-//        item.setTitle(title);
-//        item.setImage(image);
-//        item.setInfo(info);
-//        item.setPrice(Short.parseShort(price));
-//        itemRepository.save(item);
-//        return "redirect:/item/" + id;
-//    }

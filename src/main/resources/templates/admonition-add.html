@@ -4,83 +4,83 @@
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <title>База предписаний></title>
+    <title>База предписаний</title>
 </head>
 
 <body>
 <div th:replace="layouts/header :: nav"></div>
 <main class="container mt-5">
-    <h2>Изменить Предписание</h2>
+    <h2>Добавить предписание</h2>
     <form method="post">
         <label class="form-label">Номер предписания:</label>
         <input class="form-control mb-3" type="text" placeholder="Введите номер предписания"
-               th:value="${admonitions.numberDescription}" name="number">
+                name="number">
 
         <label class="form-label">Заказчик:</label>
-        <input class="form-control mb-3" type="text" placeholder="Введите заказчика" th:value="${admonitions.customer}"
+        <input class="form-control mb-3" type="text" placeholder="Введите заказчика"
                name="customer">
 
         <label class="form-label">Наименование объёкта:</label>
         <input class="form-control mb-3" type="text" placeholder="Введите заказчика"
-               th:value="${admonitions.nameObject}" name="nameObject">
+                name="nameObject">
 
         <label class="form-label">Шифр объекта:</label>
         <input class="form-control mb-3" type="text" placeholder="Введите шифр объекта"
-               th:value="${admonitions.codeObject}" name ="codeObject">
+                name ="codeObject">
 
         <label class="form-label">Исполнитель ИИ:</label>
         <input class="form-control mb-3" type="text" placeholder="Введите исполнителя ИИ"
-               th:value="${admonitions.perfomer}" name ="perfomer">
+                name ="perfomer">
 
         <label class="form-label">Вид работ:</label>
-        <input class="form-control mb-3" type="text" placeholder="Введите dид работ" th:value="${admonitions.typeWork}"
-        name = "typeWork">
+        <input class="form-control mb-3" type="text" placeholder="Введите dид работ"
+               name = "typeWork">
 
         <label class="form-label">Описание нарушений:</label>
         <input class="form-control mb-3" type="text" placeholder="Введите описание нарушений"
-               th:value="${admonitions.description}" name = "description">
+                name = "description">
 
         <label class="form-label">Классификация нарушений:</label>
         <input class="form-control mb-3" type="text" placeholder="Введите классификацию"
-               th:value="${admonitions.classificationDescription}" name="classificationDescription">
+                name="classificationDescription">
 
         <label class="form-label">Согласно НД:</label>
         <input class="form-control mb-3" type="text" placeholder="Введите пунткты нарушений"
-               th:value="${admonitions.regulatoryDocuments}" name = "regulatoryDocuments">
+                name = "regulatoryDocuments">
 
         <label class="form-label">Устраняемое/Остановочное:</label>
         <input class="form-control mb-3" type="text" placeholder="Устраняемое/Остановочное"
-               th:value="${admonitions.typeDescription}" name = "typeDescription">
+                name = "typeDescription">
 
         <label class="form-label">Дата выдачи:</label>
         <input class="form-control mb-3" type="text" placeholder="Введите дату вадачи"
-               th:value="${admonitions.dateIssue}" name ="dateIssue" >
+                name ="dateIssue" >
 
         <label class="form-label">Назначеная дата устранения:</label>
         <input class="form-control mb-3" type="text" placeholder="Введите дату устранения"
-               th:value="${admonitions.correctionDatePlan}" name="correctionDatePlan">
+                name="correctionDatePlan">
 
         <label class="form-label">Фактическая дата устранения:</label>
         <input class="form-control mb-3" type="text" placeholder="Введите дату устранения"
-               th:value="${admonitions.correctionDateFact}" name = "correctionDateFact">
+                name = "correctionDateFact">
 
         <label class="form-label">Отметка об устранении:</label>
         <input class="form-control mb-3" type="text" placeholder="Устранено/НЕ устранено"
-               th:value="${admonitions.remedyMarkFinal}" name="remedyMarkFinal">
+                name="remedyMarkFinal">
 
         <label class="form-label">Исполнитель ТК за ИИ</label>
         <input class="form-control mb-3" type="text" placeholder="Введите ФИО работника ТК за ИИ"
-               th:value="${admonitions.employee}" name="employee">
+                name="employee">
 
         <label class="form-label">Исполнитель ИИ</label>
         <input class="form-control mb-3" type="text" placeholder="Введите ФИО исполнителя ИИ"
-               th:value="${admonitions.executor}" name="executor">
+                name="executor">
 
         <label class="form-label">Представитель Заказчика</label>
         <input class="form-control mb-3" type="text" placeholder="Введите ФИО представителя заказчика"
-               th:value="${admonitions.customerRepresentative}" name="customerRepresentative">
+                name="customerRepresentative">
 
-        <button type="submit" class="btn btn-primary mb-3">Внести изменения</button>
+        <button type="submit" class="btn btn-primary mb-3">Confirm identity</button>
     </form>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
