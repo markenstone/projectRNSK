@@ -1,6 +1,7 @@
 package com.main.projectrnsk.models;
 
 import jakarta.persistence.*;
+
 import java.util.Date;
 
 @Entity
@@ -33,13 +34,13 @@ public class Admonition {
     private String classificationDescription;
 
     @Column(name = "Regulatory_documents")
-    private  String regulatoryDocuments;
+    private String regulatoryDocuments;
 
     @Column(name = "Number_description")
     private String numberDescription;
 
     @Column(name = "Type_description")
-    private  String typeDescription;
+    private String typeDescription;
 
     @Column(name = "Date_issue")
     private String dateIssue;
@@ -60,24 +61,24 @@ public class Admonition {
     private String remedyMarkFinal;
 
     @Column(name = "Employee")
-    private  String employee;
+    private String employee;
 
     @Column(name = "Executor")
     private String executor;
 
     @Column(name = "Customer_representative")
-    private  String customerRepresentative;
+    private String customerRepresentative;
 
 
-    public Admonition(){}
+    public Admonition() {
+    }
+
 
     public Admonition(String customer, String nameObject, int codeObject, String perfomer,
                       String typeWork, String description, String classificationDescription,
                       String regulatoryDocuments, String numberDescription, String typeDescription,
-                       String remedyMark,
-                      String lateNot, String remedyMarkFinal, String employee, String executor,
-                      String customerRepresentative) {
-
+                      String dateIssue, String correctionDatePlan, String remedyMarkFinal, String employee,
+                      String executor, String customerRepresentative) {
         this.customer = customer;
         this.nameObject = nameObject;
         this.codeObject = codeObject;
@@ -88,9 +89,8 @@ public class Admonition {
         this.regulatoryDocuments = regulatoryDocuments;
         this.numberDescription = numberDescription;
         this.typeDescription = typeDescription;
-
-        this.remedyMark = remedyMark;
-        this.lateNot = lateNot;
+        this.dateIssue = dateIssue;
+        this.correctionDatePlan = correctionDatePlan;
         this.remedyMarkFinal = remedyMarkFinal;
         this.employee = employee;
         this.executor = executor;

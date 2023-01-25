@@ -8,40 +8,11 @@
 
 <body>
 
-<nav class="navbar bg-primary" data-bs-theme="dark">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#">Росбос</a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">База предписаний</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Карта</a>
-                </li>
-
-            </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-        </div>
-    </div>
-</nav>
-<main class="container">
-        <div th:each="el : ${users}">
-            <h3 th:text="${el.userName}"></h3>
-            <p th:text="${el.userLastName}" />
-        </div>
-</main>
-
-
+<div th:replace="layouts/header :: header"></div>
+<div class="row mt-5 ms-2">
 <table class="table  table-bordered table-hover table-responsive">
         <thead>
-        <tr>
+        <tr class="align-top">
             <th scope="col">Номер</th>
             <th scope="col">Заказчик</th>
             <th scope="col">Наименование объёкта/Подобъекта</th>
@@ -64,6 +35,7 @@
             <th scope="col">Исполнитель ТК за ИИ</th>
             <th scope="col">Иполнитель ИИ</th>
             <th scope="col">Заказчик</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -89,13 +61,12 @@
             <td th:text="${el.employee}"></td>
             <td th:text="${el.executor}"></td>
             <td th:text="${el.customerRepresentative}"></td>
-
-
+            <td><a class="btn btn-primary" th:href="'update/' + ${el.id}" role="button">Изменить</a></td>
             </tr>
         </div>
         </tbody>
 </table>
-
+</div>
 <!-- Content here -->
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
