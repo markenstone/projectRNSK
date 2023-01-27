@@ -83,6 +83,12 @@ public class MainController {
         return "redirect:/";
     }
 
+    @PostMapping("/update/delete/{id}")
+    public String admonitionDelete(@PathVariable(value = "id") long id) {
+        Admonition admonition = admonitionService.findAdmonition(id);
+        admonitionService.deleteAdmonition(admonition);
+        return "redirect:/";
+    }
     @PostMapping("/add")
     public String addAdmonition(@RequestParam String number,
                                 @RequestParam String customer,
